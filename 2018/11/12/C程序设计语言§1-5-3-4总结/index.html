@@ -85,7 +85,7 @@
 <meta property="og:site_name" content="Let Melon Ripe">
 <meta property="og:description" content="Contents related: §1.5.3-4 of The C Programming (2nd Edition) aka C程序设计语言(第二版) by Kernighan &amp;amp; Ritchie  C程序设计语言这本书实在太难啃了… 基础知识不牢固，等我消化完两节内容后一下午过去了… §1.5.3-4介绍了Line Counting和Word Counting的基本思路。本文围绕">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-12T14:02:38.481Z">
+<meta property="og:updated_time" content="2018-11-12T14:05:13.212Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C程序设计语言§1.5.3-4总结">
 <meta name="twitter:description" content="Contents related: §1.5.3-4 of The C Programming (2nd Edition) aka C程序设计语言(第二版) by Kernighan &amp;amp; Ritchie  C程序设计语言这本书实在太难啃了… 基础知识不牢固，等我消化完两节内容后一下午过去了… §1.5.3-4介绍了Line Counting和Word Counting的基本思路。本文围绕">
@@ -357,8 +357,7 @@
 <p>§1.5.3-4介绍了Line Counting和Word Counting的基本思路。本文围绕Exercise1-9和§1.5.4中的例子，来进行知识点巩固。</p>
 <a id="more"></a>
 <hr>
-<p>###1. Exercise1-9</p>
-<p>原题：</p>
+<h3 id="1-Exercise1-9"><a href="#1-Exercise1-9" class="headerlink" title="1. Exercise1-9"></a>1. Exercise1-9</h3><p>原题：</p>
 <blockquote>
 <p>Write a program to copy its input to its output, replacing each string of one or more blanks by a single blank.</p>
 </blockquote>
@@ -373,8 +372,8 @@
 <p>值得注意的有以下几点：</p>
 <ol>
 <li><p>这是一个对多个类型数值（line, word, char）进行计数的程序，要看清各行代码的功能。如：</p>
-<p><code>if (c == &#39;\n&#39;)</code> 用于识别’\n’进行行数的计数，而</p>
-<p><code>if (c == &#39; &#39; || c == &#39;\n&#39; || c = &#39;\t&#39;)</code> 则单纯为识别出escape sequence；</p>
+<p>14行 <code>if (c == &#39;\n&#39;)</code> 用于识别’\n’进行行数的计数，而</p>
+<p>16行 <code>if (c == &#39; &#39; || c == &#39;\n&#39; || c = &#39;\t&#39;)</code> 则单纯为识别出escape sequence；</p>
 </li>
 <li><p><code>state</code> 的设置非常巧妙。当字符为escape sequence时，此时自然是处于单词外的。</p>
 <p>但当字符不为escape sequence，且 <code>state</code> 依然为 <code>OUT</code> 时，则代表这里为单词的首字母，随即将其值变更为 <code>IN</code> ，以避免单词的后几位字母被重复计入 <code>nw</code> 。</p>
@@ -566,7 +565,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-§1-5-4-Example"><span class="nav-number">1.</span> <span class="nav-text">2. §1.5.4 Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Exercise1-9"><span class="nav-number">1.</span> <span class="nav-text">1. Exercise1-9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-§1-5-4-Example"><span class="nav-number">2.</span> <span class="nav-text">2. §1.5.4 Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
