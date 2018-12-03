@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Let Melon Ripe">
 <meta property="og:description" content="Contents related:   §5.1-2 of The C Programming (2nd Edition) aka C程序设计语言(第二版) by Kernighan &amp;amp; Ritchie  Lecture slide §10 of Introduction to C Programming by Simo-Serra, retrieved from https://ess">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-03T13:10:28.238Z">
+<meta property="og:updated_time" content="2018-12-03T13:12:17.042Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C语言之初识pointer">
 <meta name="twitter:description" content="Contents related:   §5.1-2 of The C Programming (2nd Edition) aka C程序设计语言(第二版) by Kernighan &amp;amp; Ritchie  Lecture slide §10 of Introduction to C Programming by Simo-Serra, retrieved from https://ess">
@@ -390,7 +390,7 @@
 <li><p>第21行<code>swap_pointers(s1, s2)</code>没有将两实际参数的指针赋值给第8行<code>swap_pointers(char *x, char *y)</code>。那么，s1、s2两者交换后的结果仅被拷贝在形式参数x、y中，对实参本身的值没有影响。应修正第21行<code>swap_pointers(&amp;s1, &amp;s2)</code>；</p>
 </li>
 <li><p>相应的，第9~12行错误就很明显了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x = &amp;s1;	/* s1 itself&apos;s address */</span><br><span class="line">y = &amp;s2;	/* s2 itself&apos;s address */</span><br><span class="line">*x = &quot;I should print second&quot;&apos;s address;</span><br><span class="line">*y = &quot;I should print first“’s address;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x = &amp;s1;	/* s1 itself&apos;s address */</span><br><span class="line">y = &amp;s2;	/* s2 itself&apos;s address */</span><br><span class="line">*x = &quot;I should print second&quot;&apos;s address;</span><br><span class="line">*y = &quot;I should print first&quot;&apos;s address;</span><br></pre></td></tr></table></figure>
 <p>s1、s2互相交换自身的位置是没有用的，要改变指代的字符串的位置才行。因而<code>x -&gt; *x</code>，<code>y -&gt; *y</code>；</p>
 </li>
 <li><p>s1、s2本来就是pointer，因而pointer’s pointer应该以double pointer的形式呈现出来，即修正第8行<code>void swap_pointers(char **x, char **y)</code>。</p>
