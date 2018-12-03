@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="C," />
+  <meta name="keywords" content="C, 指针," />
 
 
 
@@ -80,16 +80,16 @@
 
 
 <meta name="description" content="Contents related:   §5.1-2 of The C Programming (2nd Edition) aka C程序设计语言(第二版) by Kernighan &amp;amp; Ritchie  Lecture slide §10 of Introduction to C Programming by Simo-Serra, retrieved from https://ess">
-<meta name="keywords" content="C">
+<meta name="keywords" content="C, 指针">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C语言之初识pointer">
+<meta property="og:title" content="C语言之初识指针">
 <meta property="og:url" content="captn.me/2018/12/03/C语言之初识pointer/index.html">
 <meta property="og:site_name" content="Let Melon Ripe">
 <meta property="og:description" content="Contents related:   §5.1-2 of The C Programming (2nd Edition) aka C程序设计语言(第二版) by Kernighan &amp;amp; Ritchie  Lecture slide §10 of Introduction to C Programming by Simo-Serra, retrieved from https://ess">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-03T13:12:17.042Z">
+<meta property="og:updated_time" content="2018-12-03T14:01:36.197Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C语言之初识pointer">
+<meta name="twitter:title" content="C语言之初识指针">
 <meta name="twitter:description" content="Contents related:   §5.1-2 of The C Programming (2nd Edition) aka C程序设计语言(第二版) by Kernighan &amp;amp; Ritchie  Lecture slide §10 of Introduction to C Programming by Simo-Serra, retrieved from https://ess">
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>C语言之初识pointer | Let Melon Ripe</title>
+  <title>C语言之初识指针 | Let Melon Ripe</title>
   
 
 
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C语言之初识pointer</h1>
+          <h1 class="post-title" itemprop="name headline">C语言之初识指针</h1>
         
 
         <div class="post-meta">
@@ -366,14 +366,14 @@
 </li>
 </ul>
 </blockquote>
-<p>这周课上第一次接触pointer，琢磨透这个玩意儿大概花了三个小时… 本文通过一道有关double pointer的习题，来初步理解一系列概念。</p>
+<p>这周课上第一次接触指针(pointer)，琢磨透这个玩意儿大概花了三个小时… 本文通过一道有关double pointer的习题，来初步理解一系列概念。</p>
 <a id="more"></a>
 <hr>
-<h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><p>pointer本身并不复杂，但是定义上很容易搞混，在此引用一下课本中片段(Kernighan &amp; Ritchie, p.94)来加深印象：</p>
+<h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><p>指针本身并不复杂，但是定义上很容易搞混，在此引用一下课本中片段(Kernighan &amp; Ritchie, p.94)来加深印象：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int x = 1, y = 2, z[10]; </span><br><span class="line">int *ip; 	/* ip is a pointer to int */</span><br><span class="line">ip = &amp;x;	/* ip now points to x */</span><br><span class="line">y = *ip;	/* y is now 1 */</span><br><span class="line">*ip = 0;	/* x is now 0 */</span><br><span class="line">ip = &amp;z[0];	/* ip now points to z[0] */</span><br></pre></td></tr></table></figure>
 <p>再简单些概括，即：</p>
 <ol>
-<li><code>int *ip</code>仅用于宣告ip是个整数pointer；</li>
+<li><code>int *ip</code>仅用于宣告ip是个整数指针；</li>
 <li><code>ip=&amp;x</code>存着x的位置；</li>
 <li><code>y=*ip</code>将x的值映射到y，</li>
 </ol>
@@ -393,10 +393,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x = &amp;s1;	/* s1 itself&apos;s address */</span><br><span class="line">y = &amp;s2;	/* s2 itself&apos;s address */</span><br><span class="line">*x = &quot;I should print second&quot;&apos;s address;</span><br><span class="line">*y = &quot;I should print first&quot;&apos;s address;</span><br></pre></td></tr></table></figure>
 <p>s1、s2互相交换自身的位置是没有用的，要改变指代的字符串的位置才行。因而<code>x -&gt; *x</code>，<code>y -&gt; *y</code>；</p>
 </li>
-<li><p>s1、s2本来就是pointer，因而pointer’s pointer应该以double pointer的形式呈现出来，即修正第8行<code>void swap_pointers(char **x, char **y)</code>。</p>
+<li><p>s1、s2本来就是指针，因而指针的指针(pointer’s pointer)应该以double pointer的形式呈现出来，即修正第8行<code>void swap_pointers(char **x, char **y)</code>。</p>
 </li>
 </ol>
-<p>最后，值得注意的是，因为x和y都是pointer，所以临时参数tmp也是pointer以储存/传递位置的值。</p>
+<p>最后，值得注意的是，因为x和y都是指针，所以临时参数tmp也是指针以储存/传递位置的值。</p>
 <h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p>这一部分遗留的不解之处是，为什么作为指针的s1、s2能直接表示整个字符串的值？兼有两个功能总觉得矛盾…（运行了一下发现<code>*s1</code>表示的是”i”，即字符串的第一个字符）。具体的原因再探讨吧orz，感觉涉及到char和string的转换了，还没学到。</p>
 
       
@@ -415,7 +415,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/C/" rel="tag"># C</a>
+            <a href="/tags/C-指针/" rel="tag"># C, 指针</a>
           
         </div>
       
@@ -544,7 +544,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
