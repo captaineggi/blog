@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="C,指针," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="description" content="Contents related:   §5.1-2 of The C Programming (2nd Edition) aka C程序设计语言(第二版) by Kernighan &amp;amp; Ritchie  Lecture slide §10 of Introduction to C Programming by Simo-Serra, retrieved from https://ess">
-<meta name="keywords" content="C,指针">
+<meta name="description" content="昨天，把租了两年的VPS撤了，正式搬入github pages+hexo。开始学习更多知识！">
 <meta property="og:type" content="article">
-<meta property="og:title" content="C语言之初识指针">
-<meta property="og:url" content="captn.me/2018/12/03/C语言之初识指针/index.html">
+<meta property="og:title" content="New Start">
+<meta property="og:url" content="captn.me/posts/deab04e1.html">
 <meta property="og:site_name" content="Let Melon Ripe">
-<meta property="og:description" content="Contents related:   §5.1-2 of The C Programming (2nd Edition) aka C程序设计语言(第二版) by Kernighan &amp;amp; Ritchie  Lecture slide §10 of Introduction to C Programming by Simo-Serra, retrieved from https://ess">
+<meta property="og:description" content="昨天，把租了两年的VPS撤了，正式搬入github pages+hexo。开始学习更多知识！">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-03T14:07:56.156Z">
+<meta property="og:updated_time" content="2018-07-07T16:57:07.664Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="C语言之初识指针">
-<meta name="twitter:description" content="Contents related:   §5.1-2 of The C Programming (2nd Edition) aka C程序设计语言(第二版) by Kernighan &amp;amp; Ritchie  Lecture slide §10 of Introduction to C Programming by Simo-Serra, retrieved from https://ess">
+<meta name="twitter:title" content="New Start">
+<meta name="twitter:description" content="昨天，把租了两年的VPS撤了，正式搬入github pages+hexo。开始学习更多知识！">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="captn.me/2018/12/03/C语言之初识指针/"/>
+  <link rel="canonical" href="captn.me/posts/deab04e1.html"/>
 
 
 
 
 
-  <title>C语言之初识指针 | Let Melon Ripe</title>
+  <title>New Start | Let Melon Ripe</title>
   
 
 
@@ -263,7 +262,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="captn.me/2018/12/03/C语言之初识指针/">
+    <link itemprop="mainEntityOfPage" href="captn.me/posts/deab04e1.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="eggi">
@@ -280,7 +279,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">C语言之初识指针</h1>
+          <h1 class="post-title" itemprop="name headline">New Start</h1>
         
 
         <div class="post-meta">
@@ -292,8 +291,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-03T20:13:47+09:00">
-                2018-12-03
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-06T12:33:04+09:00">
+                2018-07-06
               </time>
             
 
@@ -315,8 +314,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Programming/" itemprop="url" rel="index">
-                    <span itemprop="name">Programming</span>
+                  <a href="/categories/life/" itemprop="url" rel="index">
+                    <span itemprop="name">Life</span>
                   </a>
                 </span>
 
@@ -357,47 +356,7 @@
       
 
       
-        <blockquote>
-<p><strong>Contents related:</strong> </p>
-<ul>
-<li><p>§5.1-2 of <em>The C Programming (2nd Edition)</em> aka <em>C程序设计语言(第二版)</em> by Kernighan &amp; Ritchie</p>
-</li>
-<li><p>Lecture slide §10 of <em>Introduction to C Programming</em> by Simo-Serra, retrieved from <a href="https://esslab.jp/~ess/teaching/2018/intro_c_program/10.html" target="_blank" rel="noopener">https://esslab.jp/~ess/teaching/2018/intro_c_program/10.html</a></p>
-</li>
-</ul>
-</blockquote>
-<p>这周课上第一次接触指针(pointer)，琢磨透这个玩意儿大概花了三个小时… 本文通过一道有关double pointer的习题，来初步理解一系列概念。</p>
-<a id="more"></a>
-<hr>
-<h3 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h3><p>指针本身并不复杂，但是定义上很容易搞混，在此引用一下课本中片段(Kernighan &amp; Ritchie, p.94)来加深印象：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int x = 1, y = 2, z[10]; </span><br><span class="line">int *ip; 	/* ip is a pointer to int */</span><br><span class="line">ip = &amp;x;	/* ip now points to x */</span><br><span class="line">y = *ip;	/* y is now 1 */</span><br><span class="line">*ip = 0;	/* x is now 0 */</span><br><span class="line">ip = &amp;z[0];	/* ip now points to z[0] */</span><br></pre></td></tr></table></figure>
-<p>再简单些概括，即：</p>
-<ol>
-<li><code>int *ip</code>仅用于宣告ip是个整数指针；</li>
-<li><code>ip=&amp;x</code>存着x的位置；</li>
-<li><code>y=*ip</code>将x的值映射到y，</li>
-</ol>
-<p>云云。</p>
-<p>那么接下来就进入习题吧。该题来自于课堂课件中的Excercise 2。</p>
-<h3 id="Exercise-swapping"><a href="#Exercise-swapping" class="headerlink" title="Exercise: swapping"></a>Exercise: swapping</h3><p>原题：</p>
-<blockquote>
-<p><code>swap_nums</code> works but <code>swap_pointers</code> does not. Fix it. </p>
-</blockquote>
-<p>错误的代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;stdio.h&gt;</span><br><span class="line">void swap_nums(int *x, int *y) &#123;</span><br><span class="line">     int tmp;</span><br><span class="line">     tmp = *x;</span><br><span class="line">     *x = *y;</span><br><span class="line">     *y = tmp;</span><br><span class="line">&#125;</span><br><span class="line">void swap_pointers(char *x, char *y) &#123;</span><br><span class="line">     char *tmp;</span><br><span class="line">     tmp = x;</span><br><span class="line">     x = y;</span><br><span class="line">     y = tmp;</span><br><span class="line">&#125;</span><br><span class="line">int main (void) &#123;</span><br><span class="line">     int a=3, b=4;</span><br><span class="line">     char *s1, *s2;</span><br><span class="line">     swap_nums(&amp;a,&amp;b);</span><br><span class="line">     printf(&quot;a is %d\nb is %d\n&quot;, a, b);</span><br><span class="line">     s1 = &quot;I should print second&quot;;</span><br><span class="line">     s2 = &quot;I should print first&quot;;</span><br><span class="line">     swap_pointers( s1, s2 );</span><br><span class="line">     printf(&quot;s1 is %s\ns2 is %s\n&quot;, s1, s2);</span><br><span class="line">     return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>直接来看<code>swap_pointers</code>的问题：</p>
-<ol>
-<li><p>第21行<code>swap_pointers(s1, s2)</code>没有将两实际参数的指针赋值给第8行<code>swap_pointers(char *x, char *y)</code>。那么，s1、s2两者交换后的结果仅被拷贝在形式参数x、y中，对实参本身的值没有影响。应修正第21行<code>swap_pointers(&amp;s1, &amp;s2)</code>；</p>
-</li>
-<li><p>相应的，第9~12行错误就很明显了。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x = &amp;s1;	/* s1 itself&apos;s address */</span><br><span class="line">y = &amp;s2;	/* s2 itself&apos;s address */</span><br><span class="line">*x = &quot;I should print second&quot;&apos;s address;</span><br><span class="line">*y = &quot;I should print first&quot;&apos;s address;</span><br></pre></td></tr></table></figure>
-<p>s1、s2互相交换自身的位置是没有用的，要改变指代的字符串的位置才行。因而<code>x -&gt; *x</code>，<code>y -&gt; *y</code>；</p>
-</li>
-<li><p>s1、s2本来就是指针，因而指针的指针(pointer’s pointer)应该以double pointer的形式呈现出来，即修正第8行<code>void swap_pointers(char **x, char **y)</code>。</p>
-</li>
-</ol>
-<p>最后，值得注意的是，因为x和y都是指针，所以临时参数tmp也是指针以储存/传递位置的值。</p>
-<h3 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h3><p>这一部分遗留的不解之处是，为什么作为指针的s1、s2能直接表示整个字符串的值？兼有两个功能总觉得矛盾…（运行了一下发现<code>*s1</code>表示的是”i”，即字符串的第一个字符）。具体的原因再探讨吧orz，感觉涉及到char和string的转换了，还没学到。</p>
+        <p>昨天，把租了两年的VPS撤了，正式搬入github pages+hexo。开始学习更多知识！</p>
 
       
     </div>
@@ -413,14 +372,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/C/" rel="tag"># C</a>
-          
-            <a href="/tags/指针/" rel="tag"># 指针</a>
-          
-        </div>
-      
 
       
       
@@ -430,15 +381,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/12/C程序设计语言§1-5-3-4总结/" rel="next" title="C程序设计语言§1.5.3-4总结">
-                <i class="fa fa-chevron-left"></i> C程序设计语言§1.5.3-4总结
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/835decd.html" rel="prev" title="电子记忆">
+                电子记忆 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -495,17 +446,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -576,22 +518,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前提"><span class="nav-number">1.</span> <span class="nav-text">前提</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Exercise-swapping"><span class="nav-number">2.</span> <span class="nav-text">Exercise: swapping</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#写在最后"><span class="nav-number">3.</span> <span class="nav-text">写在最后</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
