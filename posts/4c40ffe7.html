@@ -90,7 +90,7 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/captaineggi/captaineggisub/master/2018-12/1812071.png">
 <meta property="og:image" content="https://github.com/captaineggi/captaineggisub/blob/master/2018-12/1812061.png?raw=true">
 <meta property="og:image" content="https://raw.githubusercontent.com/captaineggi/captaineggisub/master/2018-12/1812072.png">
-<meta property="og:updated_time" content="2018-12-06T18:05:01.028Z">
+<meta property="og:updated_time" content="2018-12-06T18:06:51.301Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客SEO优化之问题与解决">
 <meta name="twitter:description" content="前天花了五六个小时完成了博客的SEO，本以为照着教程配置应该很快结束，奈何中途问题重重，大部分时间花在寻找和解决（愚蠢的）问题上。 本文仅作为问题总结，不从头讲解具体配置，网上有不少优秀的教程。我主要参考的是这位网友的文章： Hexo博客Next主题SEO优化方法 那么接下来开始谈谈遇到的两个重点问题和解决方法。">
@@ -411,7 +411,7 @@
 <p>由此，我浏览了<code>sitemap.xml</code>文件，乍一看并没有发现任何特殊符号：</p>
 <p><img src="https://github.com/captaineggi/captaineggisub/blob/master/2018-12/1812061.png?raw=true" alt=""></p>
 <p>没有特殊符号，说明问题不是出在空格符号就是链接本身上面。测试了各个url，都能正常访问，最终锁定到空格上。打开<code>./node_modules/hexo-generator-sitemap/sitemap.xml</code>，这是插件自带的模板。</p>
-<p>一开始用Sublime打开检查，完全没发现任何异常，其后用Typora（感谢Typora…）发现了不一样的空格，显示出来是一个个红点。当时没截图，翻了下自己其他的md文件，找到了一样的红点：</p>
+<p>一开始用Sublime打开检查，完全没发现任何异常，其后用Typora（感谢Typora…）发现了不一样的空格，显示出来是一个个红点。当时没截图，翻了下电脑里其他md文件，找到了一样的红点：</p>
 <p><img src="https://raw.githubusercontent.com/captaineggi/captaineggisub/master/2018-12/1812072.png" alt=""></p>
 <p>应该就是tab字符… 把模板文件中所有tab字符删了之后重新生成<code>sitemap.xml</code>，测试成功！</p>
 <hr>
