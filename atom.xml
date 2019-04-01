@@ -27,9 +27,9 @@
     
     </summary>
     
-      <category term="Work" scheme="https://captn.me/categories/work/"/>
+      <category term="Work" scheme="https://captn.me/categories/Work/"/>
     
-      <category term="Life" scheme="https://captn.me/categories/work/life/"/>
+      <category term="Life" scheme="https://captn.me/categories/Work/Life/"/>
     
     
   </entry>
@@ -50,7 +50,7 @@
     
     </summary>
     
-      <category term="Life" scheme="https://captn.me/categories/life/"/>
+      <category term="Life" scheme="https://captn.me/categories/Life/"/>
     
     
   </entry>
@@ -73,7 +73,7 @@
     
     </summary>
     
-      <category term="Technique" scheme="https://captn.me/categories/technique/"/>
+      <category term="Technique" scheme="https://captn.me/categories/Technique/"/>
     
     
       <category term="Hexo" scheme="https://captn.me/tags/Hexo/"/>
@@ -106,7 +106,7 @@
     
     </summary>
     
-      <category term="Programming" scheme="https://captn.me/categories/programming/"/>
+      <category term="Programming" scheme="https://captn.me/categories/Programming/"/>
     
     
       <category term="C" scheme="https://captn.me/tags/C/"/>
@@ -134,7 +134,7 @@
     
     </summary>
     
-      <category term="Programming" scheme="https://captn.me/categories/programming/"/>
+      <category term="Programming" scheme="https://captn.me/categories/Programming/"/>
     
     
       <category term="C" scheme="https://captn.me/tags/C/"/>
@@ -157,7 +157,7 @@
     
     </summary>
     
-      <category term="Life" scheme="https://captn.me/categories/life/"/>
+      <category term="Life" scheme="https://captn.me/categories/Life/"/>
     
     
   </entry>
@@ -181,7 +181,7 @@
     
     </summary>
     
-      <category term="Life" scheme="https://captn.me/categories/life/"/>
+      <category term="Life" scheme="https://captn.me/categories/Life/"/>
     
     
   </entry>
