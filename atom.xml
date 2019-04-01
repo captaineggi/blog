@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://captn.me/"/>
-  <updated>2019-04-01T12:27:52.652Z</updated>
+  <updated>2019-04-01T12:37:47.474Z</updated>
   <id>https://captn.me/</id>
   
   <author>
@@ -17,15 +17,19 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>大型长篇连载~~</title>
+    <title>~大型长篇连载~研修</title>
     <link href="https://captn.me/posts/774ee5f7.html"/>
     <id>https://captn.me/posts/774ee5f7.html</id>
     <published>2019-04-01T12:20:39.000Z</published>
-    <updated>2019-04-01T12:27:52.652Z</updated>
+    <updated>2019-04-01T12:37:47.474Z</updated>
     
     <summary type="html">
     
     </summary>
+    
+      <category term="Work" scheme="https://captn.me/categories/work/"/>
+    
+      <category term="Life" scheme="https://captn.me/categories/work/life/"/>
     
     
   </entry>
