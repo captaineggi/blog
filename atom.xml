@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://captn.me/"/>
-  <updated>2019-06-01T14:28:47.731Z</updated>
+  <updated>2019-07-22T12:37:06.197Z</updated>
   <id>https://captn.me/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>日本格安运营商更换经验谈</title>
+    <link href="https://captn.me/posts/cd11603f.html"/>
+    <id>https://captn.me/posts/cd11603f.html</id>
+    <published>2019-07-16T12:26:15.000Z</published>
+    <updated>2019-07-22T12:37:06.197Z</updated>
+    
+    <content type="html"><![CDATA[<p>精通生活的成本真的很高。</p><a id="more"></a><p>曾经和朋友经常讨论在国内想上个外网要求的门槛有多高。虽说是上有政策，下有对策，但是在信息被逐渐封锁的国内，想要实时了解到最新的技术手段是很困难的。在有限的资源里获得正确信息的成本相当高。</p><p>在信息自由的日本，资源无限，却也是难得正解。game theory里的所谓选择越多，收益反而会越低吧… </p><p>话扯远了，一言以蔽之，日本的运营商市场从三大(docomo, au, softbank)的独占中解放出来后，格安运营商乱立，对消费者来说是利弊兼有。利自然是话费大幅降低、不被长期契约束缚；弊则是，谁都能进来掺一脚做手机生意，服务质量不能被保证。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;精通生活的成本真的很高。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="technique" scheme="https://captn.me/categories/technique/"/>
+    
+    
+      <category term="手机" scheme="https://captn.me/tags/%E6%89%8B%E6%9C%BA/"/>
+    
+      <category term="网络" scheme="https://captn.me/tags/%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
     <title>【大型无聊连载】研修38天（END）</title>
     <link href="https://captn.me/posts/d2fcc3eb.html"/>
     <id>https://captn.me/posts/d2fcc3eb.html</id>
     <published>2019-06-01T14:16:55.000Z</published>
-    <updated>2019-06-01T14:28:47.731Z</updated>
+    <updated>2019-06-01T14:32:28.348Z</updated>
     
     <content type="html"><![CDATA[<p>Not all stories deserve a good ending.</p><a id="more"></a><p>（35）-（36）</p><p>回到商务班，准备研修最后的发表。</p><p>拖技术班同学的福，我在上一周就已经完成文章的最后修改了。</p><p>发表也是平平常常的过去…</p><p>在周二有纠结到底要不要参加最后一天的飲み会。踌躇之下还是决定去了，还是有想要聊天的同事的。</p><p>（37）</p><p>いよいよ研修の最後日。</p><p>下午是空的，没去参加班级的运动会，和中国同事去唱了K，超级爽。</p><p>然后很遗憾的，飲み会又一次成了噩梦。没有人和我说话… 引起了话题也没人接。</p><p>是啊。</p><p>就这样度过3年一般的3小时。</p><p>无缘啦这个班。可能真的是阴影的体验吧。</p>]]></content>
     
@@ -442,32 +466,6 @@
       <category term="C" scheme="https://captn.me/tags/C/"/>
     
       <category term="指针" scheme="https://captn.me/tags/%E6%8C%87%E9%92%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C程序设计语言§1.5.3-4总结</title>
-    <link href="https://captn.me/posts/c318d679.html"/>
-    <id>https://captn.me/posts/c318d679.html</id>
-    <published>2018-11-12T12:34:38.000Z</published>
-    <updated>2019-04-01T13:06:47.468Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p><strong>Contents related:</strong> §1.5.3-4 of <em>The C Programming (2nd Edition)</em> aka <em>C程序设计语言(第二版)</em> by Kernighan &amp; Ritchie</p></blockquote><p>C程序设计语言这本书实在太难啃了… 基础知识不牢固，等我消化完两节内容后一下午过去了…</p><p>§1.5.3-4介绍了Line Counting和Word Counting的基本思路。本文围绕Exercise1-9和§1.5.4中的例子，来进行知识点巩固。</p><a id="more"></a><hr><h2 id="§1-5-3-Exercise1-9"><a href="#§1-5-3-Exercise1-9" class="headerlink" title="§1.5.3 Exercise1-9"></a>§1.5.3 Exercise1-9</h2><p>原题：</p><blockquote><p>Write a program to copy its input to its output, replacing each string of one or more blanks by a single blank.</p></blockquote><p>概括题意则为，用单一空格代替input中的连续空格，以达到文章美观、间接的效果。</p><p>代码：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">int</span> c, lastc;</span><br><span class="line"><span class="comment">/* 设lastc为前一字符，赋值EOF意味着它不可能为空格，</span></span><br><span class="line"><span class="comment">且不会与任何字符值重合 */</span></span><br><span class="line">lastc = EOF;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>((c = getchar()) != EOF)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">/* 如读取的字符不为空格，</span></span><br><span class="line"><span class="comment">则其多为单词和换行符，正常输出即可 */</span></span><br><span class="line"><span class="keyword">if</span> (c != <span class="string">' '</span>)</span><br><span class="line"><span class="built_in">putchar</span>(c);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">/* 如读取的字符为空格，</span></span><br><span class="line"><span class="comment">且前一字符不为空格（即该空格紧邻单词末尾）时，输出该空格; </span></span><br><span class="line"><span class="comment">如前一字符仍为空格，则其属于重复空格，不必输出 */</span></span><br><span class="line"><span class="keyword">if</span> (lastc != <span class="string">' '</span>)</span><br><span class="line"><span class="built_in">putchar</span>(c);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 赋值lastc为c，如c为非空格字符，</span></span><br><span class="line"><span class="comment">那么lastc用于检验并输出紧邻下一个单词的空格；</span></span><br><span class="line"><span class="comment">如c为空格字符，即' '，</span></span><br><span class="line"><span class="comment">则再次检验else中条件，得出不必输出接下来的空格 */</span></span><br><span class="line">lastc = c;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="§1-5-4-Example"><a href="#§1-5-4-Example" class="headerlink" title="§1.5.4 Example"></a>§1.5.4 Example</h2><p>原文描述：</p><blockquote><p>This is a bare-bones version of the UNIX program <code>we</code>.</p></blockquote><p>原文代码：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> IN 1<span class="comment">/* inside a word */</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> OUT 0<span class="comment">/* outside a word */</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* count lines, words, and characters in input */</span></span><br><span class="line">main() </span><br><span class="line">&#123; </span><br><span class="line"><span class="keyword">int</span> c, nl, nw, nc, state;</span><br><span class="line"></span><br><span class="line">state = OUT; </span><br><span class="line">nl = nw = nc = <span class="number">0</span>; </span><br><span class="line"><span class="keyword">while</span> ((c = getchar()) != EOF) &#123;</span><br><span class="line">++nc;</span><br><span class="line"><span class="keyword">if</span> (c == <span class="string">'\n'</span>)</span><br><span class="line">++nl; </span><br><span class="line"><span class="keyword">if</span> (c == <span class="string">' '</span> || c == <span class="string">'\n'</span> || c = <span class="string">'\t'</span>)</span><br><span class="line">state = OUT; </span><br><span class="line"><span class="keyword">else</span> <span class="keyword">if</span> (state == OUT) &#123;</span><br><span class="line">state = IN;</span><br><span class="line">++nw; </span><br><span class="line">&#125;</span><br><span class="line">&#125; </span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d %d %d\n"</span>, nl, nw, nc);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>值得注意的有以下几点：</p><ol><li><p>这是一个对多个类型数值（line, word, char）进行计数的程序，要看清各行代码的功能。如：</p><p>14行 <code>if (c == &#39;\n&#39;)</code> 用于识别换行符计入行数，而</p><p>16行 <code>if (c == &#39; &#39; || c == &#39;\n&#39; || c = &#39;\t&#39;)</code> 则单纯为识别出escape sequence；</p></li><li><p><code>state</code> 的设置非常巧妙。当字符为escape sequence时，此时自然是处于单词外的。</p><p>但当字符不为escape sequence，且 <code>state</code> 依然为 <code>OUT</code> 时，则代表这里为单词的首字母，随即将其值变更为 <code>IN</code> ，以避免单词的后几位字母被重复计入 <code>nw</code> 。</p><p>而当一单词被读取完毕，开始读取下一escape sequence时， <code>state</code> 变为 <code>OUT</code>，不计入 <code>nw</code> 。</p></li></ol><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本两节的重点为：</p><ol><li>借用third variable来灵活探索前后字符关系；</li><li>通过设置binary variable来识别不同属性的字符。</li></ol><p>妙啊，妙啊！（（（</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Contents related:&lt;/strong&gt; §1.5.3-4 of &lt;em&gt;The C Programming (2nd Edition)&lt;/em&gt; aka &lt;em&gt;C程序设计语言(第二版)&lt;/em&gt; by Kernighan &amp;amp; Ritchie&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;C程序设计语言这本书实在太难啃了… 基础知识不牢固，等我消化完两节内容后一下午过去了…&lt;/p&gt;
-&lt;p&gt;§1.5.3-4介绍了Line Counting和Word Counting的基本思路。本文围绕Exercise1-9和§1.5.4中的例子，来进行知识点巩固。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="programming" scheme="https://captn.me/categories/programming/"/>
-    
-    
-      <category term="C" scheme="https://captn.me/tags/C/"/>
     
   </entry>
   
