@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://captn.me/"/>
-  <updated>2019-07-23T22:23:41.099Z</updated>
+  <updated>2019-08-27T12:28:37.066Z</updated>
   <id>https://captn.me/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一个月速成MarkLogic</title>
+    <link href="https://captn.me/posts/5ea11851.html"/>
+    <id>https://captn.me/posts/5ea11851.html</id>
+    <published>2019-08-27T11:19:39.000Z</published>
+    <updated>2019-08-27T12:28:37.066Z</updated>
+    
+    <content type="html"><![CDATA[<p>赶鸭子上架… 不行也得行。</p><a id="more"></a><p>7月4号开始，前辈让我学习MarkLogic。我们部门第一次用这玩意儿，老实说部门里就两三个人懂它，也没人特别教我、甚至给我资料，自己从0开始摸起来。天知道我这个SQL都只是纸上谈兵的人是怎么学的…</p><p>但最终在7月31日时，我开发完了配置资产的batch文件，算是交了不错的作业吧。</p><p>下面讲一下自学的大致流程。</p><h1 id="一切的源头-XQuery"><a href="#一切的源头-XQuery" class="headerlink" title="一切的源头: XQuery"></a>一切的源头: XQuery</h1><p>因为项目的数据都是以xml格式被保存，因而自然要用XQuery来操作数据（MarkLogic也支持JSON）。</p><p>XQuery讲道理毕竟是设计来管理xml数据的，所以这个语言能做的事情很有限，同时文法也不那么难。一开始学会了XQuery的FLWOR句式(For, Let, Where, Order by, Return)，就大致可以开始操作QueryConsole(MarkLogic的网页开发工具)。</p><h1 id="MarkLogic内建函数-xdmp和cts"><a href="#MarkLogic内建函数-xdmp和cts" class="headerlink" title="MarkLogic内建函数: xdmp和cts"></a>MarkLogic内建函数: xdmp和cts</h1><p>由于MarkLogic第三方资源的匮乏，接下来你不得不与官方的开发手册共度时光。</p><p>文件/系统层面的操作，如上传、删除、新建、获取文件信息、赋予权限等，都倚靠<code>xdmp:</code>的各类函数。此处便不多介绍，官方提供的函数少说一百来个，根据自己的需求在<a href="https://docs.marklogic.com/xdmp" target="_blank" rel="noopener">index</a>里找吧。</p><p>数据层面的检索，皆用<code>cts:</code>函数。由于MarkLogic特殊的range index构造，它可以快速拾取到含有一定element的文件。因而<code>cts:</code>可以进行高自定义水平的检索，比如筛选出所有A标签里含有B字段的文件。印象里此类搜索，哪怕有100万条数据基本也可以在1s内筛选结束…</p><h1 id="Batch类工具-MLCP和CoRB"><a href="#Batch类工具-MLCP和CoRB" class="headerlink" title="Batch类工具: MLCP和CoRB"></a>Batch类工具: MLCP和CoRB</h1><p>QueryConsole适合日常的运维使用，但涉及到批量操作是不合适的。批量上传、更新、删除，主要使用MLCP和CoRB。其中CoRB不支持从AP服务器上传到DB服务器（只能DB服务器到MarkLogic服务器），所以如果有这部分需求得用MLCP。此外，由于原有系统还残存PostgreSQL，所以开发时会使用这两个工具进行csv-&gt;xml之类的格式转换。</p><p>CUI觉得不方便的话，用支持WebDAV协议的新版WinSCP也可以对DB服务器进行文件管理。</p><h1 id="我的下一步"><a href="#我的下一步" class="headerlink" title="我的下一步"></a>我的下一步</h1><p>进一步理解MarkLogic的range index构造。</p><p>精通<code>cts:</code>函数使用。</p><p>不限于前端开发，理解后台构造(WebDAV)。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;赶鸭子上架… 不行也得行。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="work" scheme="https://captn.me/categories/work/"/>
+    
+    
+      <category term="MarkLogic" scheme="https://captn.me/tags/MarkLogic/"/>
+    
+  </entry>
   
   <entry>
     <title>日本格安运营商更换经验谈</title>
@@ -433,39 +455,6 @@
       <category term="Hexo" scheme="https://captn.me/tags/Hexo/"/>
     
       <category term="SEO" scheme="https://captn.me/tags/SEO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>C语言之初识指针</title>
-    <link href="https://captn.me/posts/6c5bd191.html"/>
-    <id>https://captn.me/posts/6c5bd191.html</id>
-    <published>2018-12-03T11:13:47.000Z</published>
-    <updated>2019-04-01T13:06:52.992Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p><strong>Contents related:</strong> </p><ul><li><p>§5.1-2 of <em>The C Programming (2nd Edition)</em> aka <em>C程序设计语言(第二版)</em> by Kernighan &amp; Ritchie</p></li><li><p>Lecture slide §10 of <em>Introduction to C Programming</em> by Simo-Serra, retrieved from <a href="https://esslab.jp/~ess/teaching/2018/intro_c_program/10.html" target="_blank" rel="noopener">https://esslab.jp/~ess/teaching/2018/intro_c_program/10.html</a></p></li></ul></blockquote><p>这周课上第一次接触指针(pointer)，琢磨透这个玩意儿大概花了三个小时… 本文通过一道有关double pointer的习题，来初步理解一系列概念。</p><a id="more"></a><hr><h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>指针本身并不复杂，但是定义上很容易搞混，在此引用一下课本中片段(Kernighan &amp; Ritchie, p.94)来加深印象：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x = <span class="number">1</span>, y = <span class="number">2</span>, z[<span class="number">10</span>]; </span><br><span class="line"><span class="keyword">int</span> *ip; <span class="comment">/* ip is a pointer to int */</span></span><br><span class="line">ip = &amp;x;<span class="comment">/* ip now points to x */</span></span><br><span class="line">y = *ip;<span class="comment">/* y is now 1 */</span></span><br><span class="line">*ip = <span class="number">0</span>;<span class="comment">/* x is now 0 */</span></span><br><span class="line">ip = &amp;z[<span class="number">0</span>];<span class="comment">/* ip now points to z[0] */</span></span><br></pre></td></tr></table></figure><p>再简单些概括，即：</p><ol><li><code>int *ip</code>仅用于宣告ip是个整数指针；</li><li><code>ip=&amp;x</code>存着x的位置；</li><li><code>y=*ip</code>将x的值映射到y，</li></ol><p>云云。</p><p>那么接下来就进入习题吧。该题来自于课堂课件中的Excercise 2。</p><h2 id="Exercise-swapping"><a href="#Exercise-swapping" class="headerlink" title="Exercise: swapping"></a>Exercise: swapping</h2><p>原题：</p><blockquote><p><code>swap_nums</code> works but <code>swap_pointers</code> does not. Fix it. </p></blockquote><p>错误的代码：</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap_nums</span><span class="params">(<span class="keyword">int</span> *x, <span class="keyword">int</span> *y)</span> </span>&#123;</span><br><span class="line">     <span class="keyword">int</span> tmp;</span><br><span class="line">     tmp = *x;</span><br><span class="line">     *x = *y;</span><br><span class="line">     *y = tmp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">swap_pointers</span><span class="params">(<span class="keyword">char</span> *x, <span class="keyword">char</span> *y)</span> </span>&#123;</span><br><span class="line">     <span class="keyword">char</span> *tmp;</span><br><span class="line">     tmp = x;</span><br><span class="line">     x = y;</span><br><span class="line">     y = tmp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span> <span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">     <span class="keyword">int</span> a=<span class="number">3</span>, b=<span class="number">4</span>;</span><br><span class="line">     <span class="keyword">char</span> *s1, *s2;</span><br><span class="line">     swap_nums(&amp;a,&amp;b);</span><br><span class="line">     <span class="built_in">printf</span>(<span class="string">"a is %d\nb is %d\n"</span>, a, b);</span><br><span class="line">     s1 = <span class="string">"I should print second"</span>;</span><br><span class="line">     s2 = <span class="string">"I should print first"</span>;</span><br><span class="line">     swap_pointers( s1, s2 );</span><br><span class="line">     <span class="built_in">printf</span>(<span class="string">"s1 is %s\ns2 is %s\n"</span>, s1, s2);</span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>直接来看<code>swap_pointers</code>的问题：</p><ol><li><p>第21行<code>swap_pointers(s1, s2)</code>没有将两实际参数的指针赋值给第8行<code>swap_pointers(char *x, char *y)</code>。那么，s1、s2两者交换后的结果仅被拷贝在形式参数x、y中，对实参本身的值没有影响。应修正第21行<code>swap_pointers(&amp;s1, &amp;s2)</code>；</p></li><li><p>相应的，第9~12行错误就很明显了。</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">x = &amp;s1;<span class="comment">/* s1 itself's address */</span></span><br><span class="line">y = &amp;s2;<span class="comment">/* s2 itself's address */</span></span><br><span class="line">*x = "I should print second"'s address;</span><br><span class="line">*y = "I should print first"'s address;</span><br></pre></td></tr></table></figure><p>s1、s2互相交换自身的位置是没有用的，要改变指代的字符串的位置才行。因而<code>x -&gt; *x</code>，<code>y -&gt; *y</code>；</p></li><li><p>s1、s2本来就是指针，因而指针的指针(pointer’s pointer)应该以double pointer的形式呈现出来，即修正第8行<code>void swap_pointers(char **x, char **y)</code>。</p></li></ol><p>最后，值得注意的是，因为x和y都是指针，所以临时参数tmp也是指针以储存/传递位置的值。</p><h2 id="写在最后"><a href="#写在最后" class="headerlink" title="写在最后"></a>写在最后</h2><p>这一部分遗留的不解之处是，为什么作为指针的s1、s2能直接表示整个字符串的值？兼有两个功能总觉得矛盾…（运行了一下发现<code>*s1</code>表示的是”i”，即字符串的第一个字符）。具体的原因再探讨吧orz，感觉涉及到char和string的转换了，还没学到。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Contents related:&lt;/strong&gt; &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;§5.1-2 of &lt;em&gt;The C Programming (2nd Edition)&lt;/em&gt; aka &lt;em&gt;C程序设计语言(第二版)&lt;/em&gt; by Kernighan &amp;amp; Ritchie&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Lecture slide §10 of &lt;em&gt;Introduction to C Programming&lt;/em&gt; by Simo-Serra, retrieved from &lt;a href=&quot;https://esslab.jp/~ess/teaching/2018/intro_c_program/10.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://esslab.jp/~ess/teaching/2018/intro_c_program/10.html&lt;/a&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;这周课上第一次接触指针(pointer)，琢磨透这个玩意儿大概花了三个小时… 本文通过一道有关double pointer的习题，来初步理解一系列概念。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="programming" scheme="https://captn.me/categories/programming/"/>
-    
-    
-      <category term="C" scheme="https://captn.me/tags/C/"/>
-    
-      <category term="指针" scheme="https://captn.me/tags/%E6%8C%87%E9%92%88/"/>
     
   </entry>
   
