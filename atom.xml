@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://captn.me/"/>
-  <updated>2019-08-27T12:28:37.066Z</updated>
+  <updated>2019-12-08T13:52:25.553Z</updated>
   <id>https://captn.me/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://captn.me/posts/5ea11851.html"/>
     <id>https://captn.me/posts/5ea11851.html</id>
     <published>2019-08-27T11:19:39.000Z</published>
-    <updated>2019-08-27T12:28:37.066Z</updated>
+    <updated>2019-12-08T13:52:25.553Z</updated>
     
-    <content type="html"><![CDATA[<p>赶鸭子上架… 不行也得行。</p><a id="more"></a><p>7月4号开始，前辈让我学习MarkLogic。我们部门第一次用这玩意儿，老实说部门里就两三个人懂它，也没人特别教我、甚至给我资料，自己从0开始摸起来。天知道我这个SQL都只是纸上谈兵的人是怎么学的…</p><p>但最终在7月31日时，我开发完了配置资产的batch文件，算是交了不错的作业吧。</p><p>下面讲一下自学的大致流程。</p><h1 id="一切的源头-XQuery"><a href="#一切的源头-XQuery" class="headerlink" title="一切的源头: XQuery"></a>一切的源头: XQuery</h1><p>因为项目的数据都是以xml格式被保存，因而自然要用XQuery来操作数据（MarkLogic也支持JSON）。</p><p>XQuery讲道理毕竟是设计来管理xml数据的，所以这个语言能做的事情很有限，同时文法也不那么难。一开始学会了XQuery的FLWOR句式(For, Let, Where, Order by, Return)，就大致可以开始操作QueryConsole(MarkLogic的网页开发工具)。</p><h1 id="MarkLogic内建函数-xdmp和cts"><a href="#MarkLogic内建函数-xdmp和cts" class="headerlink" title="MarkLogic内建函数: xdmp和cts"></a>MarkLogic内建函数: xdmp和cts</h1><p>由于MarkLogic第三方资源的匮乏，接下来你不得不与官方的开发手册共度时光。</p><p>文件/系统层面的操作，如上传、删除、新建、获取文件信息、赋予权限等，都倚靠<code>xdmp:</code>的各类函数。此处便不多介绍，官方提供的函数少说一百来个，根据自己的需求在<a href="https://docs.marklogic.com/xdmp" target="_blank" rel="noopener">index</a>里找吧。</p><p>数据层面的检索，皆用<code>cts:</code>函数。由于MarkLogic特殊的range index构造，它可以快速拾取到含有一定element的文件。因而<code>cts:</code>可以进行高自定义水平的检索，比如筛选出所有A标签里含有B字段的文件。印象里此类搜索，哪怕有100万条数据基本也可以在1s内筛选结束…</p><h1 id="Batch类工具-MLCP和CoRB"><a href="#Batch类工具-MLCP和CoRB" class="headerlink" title="Batch类工具: MLCP和CoRB"></a>Batch类工具: MLCP和CoRB</h1><p>QueryConsole适合日常的运维使用，但涉及到批量操作是不合适的。批量上传、更新、删除，主要使用MLCP和CoRB。其中CoRB不支持从AP服务器上传到DB服务器（只能DB服务器到MarkLogic服务器），所以如果有这部分需求得用MLCP。此外，由于原有系统还残存PostgreSQL，所以开发时会使用这两个工具进行csv-&gt;xml之类的格式转换。</p><p>CUI觉得不方便的话，用支持WebDAV协议的新版WinSCP也可以对DB服务器进行文件管理。</p><h1 id="我的下一步"><a href="#我的下一步" class="headerlink" title="我的下一步"></a>我的下一步</h1><p>进一步理解MarkLogic的range index构造。</p><p>精通<code>cts:</code>函数使用。</p><p>不限于前端开发，理解后台构造(WebDAV)。</p>]]></content>
+    <content type="html"><![CDATA[<p>赶鸭子上架… 不行也得行。</p><a id="more"></a><p>7月4号开始，前辈让我学习MarkLogic。我们部门第一次用这玩意儿，老实说部门里就两三个人懂它，也没人特别教我、甚至给我资料，自己从0开始摸起来。天知道我这个SQL都只是纸上谈兵的人是怎么学的…</p><p>但最终在7月31日时，我写完了批量更新ML数据+导出log的shell script，算是交了不错的作业吧。</p><p>下面讲一下自学的大致流程。</p><h1 id="一切的源头-XQuery"><a href="#一切的源头-XQuery" class="headerlink" title="一切的源头: XQuery"></a>一切的源头: XQuery</h1><p>本项目的数据都以xml形式保存，语言方面则使用了控制xml的标准语言XQuery。</p><p>XQuery是函数式语言。这里需要掌握FLWOR句式(For, Let, Where, Order by, Return)，即可大致掌握函数运算的基本逻辑，进一步运用来query想要的数据。</p><h1 id="MarkLogic内建函数-xdmp和cts"><a href="#MarkLogic内建函数-xdmp和cts" class="headerlink" title="MarkLogic内建函数: xdmp和cts"></a>MarkLogic内建函数: xdmp和cts</h1><p>由于MarkLogic第三方资源的匮乏，接下来你不得不与官方的开发手册共度时光。</p><p>MarkLogic拥有其独有的函数<code>xdmp</code>和 <code>cts</code>，可以直接通过XQuery呼出。</p><p> 文件/系统层面的操作，如上传、删除、新建、获取文件信息、赋予权限等，都倚靠<code>xdmp</code>。此处便不多介绍，官方提供的函数少说一百来个，根据自己的需求在<a href="https://docs.marklogic.com/xdmp" target="_blank" rel="noopener">index</a>里找吧。</p><p>query检索，皆用<code>cts</code>函数。通过它可以快速拾取到含有特定element的文件，因而对文件内容可以做到高精准度的检索，比如筛选出所有A标签里含有B字段的文件。</p><h1 id="Batch类工具-MLCP和CoRB"><a href="#Batch类工具-MLCP和CoRB" class="headerlink" title="Batch类工具: MLCP和CoRB"></a>Batch类工具: MLCP和CoRB</h1><p>QueryConsole适合日常的运维使用，但涉及到批量操作是不合适的。因为使用类似的XQuery代码在GUI上一遍遍run是非常没有效率的。批量操作主要使用MLCP和CoRB，都是open source的工具。可以通过这它们来运行事先写好的XQuery代码，完成批量导入导出、上传删除等等的工作。我所在的project并没有过多依赖它们来进行batch处理的开发，主要还是因为是open source的原因，后期维护上得不到保障。</p><p>入门篇先讲到这里！</p>]]></content>
     
     <summary type="html">
     
