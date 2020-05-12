@@ -5,9 +5,9 @@
   <subtitle>Eggi&#39;s blog</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="https://captn.me/"/>
+  <link href="https://captaineggi.github.io/"/>
   <updated>2019-12-08T13:52:25.553Z</updated>
-  <id>https://captn.me/</id>
+  <id>https://captaineggi.github.io/</id>
   
   <author>
     <name>eggi</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>一个月速成MarkLogic</title>
-    <link href="https://captn.me/posts/5ea11851.html"/>
-    <id>https://captn.me/posts/5ea11851.html</id>
+    <link href="https://captaineggi.github.io/posts/5ea11851.html"/>
+    <id>https://captaineggi.github.io/posts/5ea11851.html</id>
     <published>2019-08-27T11:19:39.000Z</published>
     <updated>2019-12-08T13:52:25.553Z</updated>
     
@@ -31,17 +31,17 @@
     
     </summary>
     
-      <category term="work" scheme="https://captn.me/categories/work/"/>
+      <category term="work" scheme="https://captaineggi.github.io/categories/work/"/>
     
     
-      <category term="MarkLogic" scheme="https://captn.me/tags/MarkLogic/"/>
+      <category term="MarkLogic" scheme="https://captaineggi.github.io/tags/MarkLogic/"/>
     
   </entry>
   
   <entry>
     <title>日本格安运营商更换经验谈</title>
-    <link href="https://captn.me/posts/cd11603f.html"/>
-    <id>https://captn.me/posts/cd11603f.html</id>
+    <link href="https://captaineggi.github.io/posts/cd11603f.html"/>
+    <id>https://captaineggi.github.io/posts/cd11603f.html</id>
     <published>2019-07-16T12:26:15.000Z</published>
     <updated>2019-07-23T22:23:41.099Z</updated>
     
@@ -53,19 +53,19 @@
     
     </summary>
     
-      <category term="technique" scheme="https://captn.me/categories/technique/"/>
+      <category term="technique" scheme="https://captaineggi.github.io/categories/technique/"/>
     
     
-      <category term="手机" scheme="https://captn.me/tags/%E6%89%8B%E6%9C%BA/"/>
+      <category term="手机" scheme="https://captaineggi.github.io/tags/%E6%89%8B%E6%9C%BA/"/>
     
-      <category term="网络" scheme="https://captn.me/tags/%E7%BD%91%E7%BB%9C/"/>
+      <category term="网络" scheme="https://captaineggi.github.io/tags/%E7%BD%91%E7%BB%9C/"/>
     
   </entry>
   
   <entry>
     <title>写在入社前前夜</title>
-    <link href="https://captn.me/posts/ffd1f47e.html"/>
-    <id>https://captn.me/posts/ffd1f47e.html</id>
+    <link href="https://captaineggi.github.io/posts/ffd1f47e.html"/>
+    <id>https://captaineggi.github.io/posts/ffd1f47e.html</id>
     <published>2019-03-30T15:53:19.528Z</published>
     <updated>2019-04-01T13:06:42.393Z</updated>
     
@@ -78,15 +78,15 @@
     
     </summary>
     
-      <category term="life" scheme="https://captn.me/categories/life/"/>
+      <category term="life" scheme="https://captaineggi.github.io/categories/life/"/>
     
     
   </entry>
   
   <entry>
     <title>Hexo博客SEO优化之问题与解决</title>
-    <link href="https://captn.me/posts/4c40ffe7.html"/>
-    <id>https://captn.me/posts/4c40ffe7.html</id>
+    <link href="https://captaineggi.github.io/posts/4c40ffe7.html"/>
+    <id>https://captaineggi.github.io/posts/4c40ffe7.html</id>
     <published>2018-12-06T15:54:04.000Z</published>
     <updated>2019-04-01T13:06:59.299Z</updated>
     
@@ -101,19 +101,19 @@
     
     </summary>
     
-      <category term="technique" scheme="https://captn.me/categories/technique/"/>
+      <category term="technique" scheme="https://captaineggi.github.io/categories/technique/"/>
     
     
-      <category term="Hexo" scheme="https://captn.me/tags/Hexo/"/>
+      <category term="Hexo" scheme="https://captaineggi.github.io/tags/Hexo/"/>
     
-      <category term="SEO" scheme="https://captn.me/tags/SEO/"/>
+      <category term="SEO" scheme="https://captaineggi.github.io/tags/SEO/"/>
     
   </entry>
   
   <entry>
     <title>C语言之初识指针</title>
-    <link href="https://captn.me/posts/6c5bd191.html"/>
-    <id>https://captn.me/posts/6c5bd191.html</id>
+    <link href="https://captaineggi.github.io/posts/6c5bd191.html"/>
+    <id>https://captaineggi.github.io/posts/6c5bd191.html</id>
     <published>2018-12-03T11:13:47.000Z</published>
     <updated>2019-04-01T13:06:52.992Z</updated>
     
@@ -134,19 +134,19 @@
     
     </summary>
     
-      <category term="programming" scheme="https://captn.me/categories/programming/"/>
+      <category term="programming" scheme="https://captaineggi.github.io/categories/programming/"/>
     
     
-      <category term="C" scheme="https://captn.me/tags/C/"/>
+      <category term="C" scheme="https://captaineggi.github.io/tags/C/"/>
     
-      <category term="指针" scheme="https://captn.me/tags/%E6%8C%87%E9%92%88/"/>
+      <category term="指针" scheme="https://captaineggi.github.io/tags/%E6%8C%87%E9%92%88/"/>
     
   </entry>
   
   <entry>
     <title>C程序设计语言§1.5.3-4总结</title>
-    <link href="https://captn.me/posts/c318d679.html"/>
-    <id>https://captn.me/posts/c318d679.html</id>
+    <link href="https://captaineggi.github.io/posts/c318d679.html"/>
+    <id>https://captaineggi.github.io/posts/c318d679.html</id>
     <published>2018-11-12T12:34:38.000Z</published>
     <updated>2019-04-01T13:06:47.468Z</updated>
     
@@ -162,17 +162,17 @@
     
     </summary>
     
-      <category term="programming" scheme="https://captn.me/categories/programming/"/>
+      <category term="programming" scheme="https://captaineggi.github.io/categories/programming/"/>
     
     
-      <category term="C" scheme="https://captn.me/tags/C/"/>
+      <category term="C" scheme="https://captaineggi.github.io/tags/C/"/>
     
   </entry>
   
   <entry>
     <title>电子记忆</title>
-    <link href="https://captn.me/posts/835decd.html"/>
-    <id>https://captn.me/posts/835decd.html</id>
+    <link href="https://captaineggi.github.io/posts/835decd.html"/>
+    <id>https://captaineggi.github.io/posts/835decd.html</id>
     <published>2018-10-21T14:18:20.000Z</published>
     <updated>2019-04-01T13:06:37.319Z</updated>
     
@@ -185,15 +185,15 @@
     
     </summary>
     
-      <category term="life" scheme="https://captn.me/categories/life/"/>
+      <category term="life" scheme="https://captaineggi.github.io/categories/life/"/>
     
     
   </entry>
   
   <entry>
     <title>New Start</title>
-    <link href="https://captn.me/posts/deab04e1.html"/>
-    <id>https://captn.me/posts/deab04e1.html</id>
+    <link href="https://captaineggi.github.io/posts/deab04e1.html"/>
+    <id>https://captaineggi.github.io/posts/deab04e1.html</id>
     <published>2018-07-06T03:33:04.000Z</published>
     <updated>2019-04-01T13:07:03.478Z</updated>
     
@@ -209,7 +209,7 @@
     
     </summary>
     
-      <category term="life" scheme="https://captn.me/categories/life/"/>
+      <category term="life" scheme="https://captaineggi.github.io/categories/life/"/>
     
     
   </entry>
